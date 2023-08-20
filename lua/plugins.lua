@@ -4,7 +4,6 @@
    -- Packer can manage itself
      use 'wbthomason/packer.nvim'
 --     use 'rstacruz/vim-closer'
-	print('Loading nvim tree')
 	use {
 	 	'nvim-tree/nvim-tree.lua',
 		requires = {
@@ -18,4 +17,10 @@
 	use {'neoclide/coc.nvim', branch = 'release'}
 
 	use {'benmills/vimux', config = function() vim.g.VimuxOrientation = 'v' end}
+
+	use { 'nvim-treesitter/nvim-treesitter'} 
+
+	use {"lukas-reineke/indent-blankline.nvim"}
+
+	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 end)
