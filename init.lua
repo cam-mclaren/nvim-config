@@ -14,11 +14,22 @@ vim.cmd([[set clipboard=unnamedplus]])
  vim.opt.termguicolors = true
 --
 -- -- empty setup using defaults
--- require("nvim-tree").setup()
+-- require("nvim-tree").setup() 985585
 --
 -- -- OR setup with some options
+require('nvim-web-devicons').setup({
+    override_by_extension = {
+        ["txt"] = {
+            icon ="",
+	    color = "#428850",
+	    cterm_color = "65",
+    	    name = "text"
+    }}});
+    
+--
+--
 -- require('nvim-tree').config.actions.open_file)
-require("nvim-tree").setup({
+require("nvim-tree").setup({ 
     sort_by = "case_sensitive",
     actions = { open_file = { resize_window = false } },
     view = {
@@ -65,15 +76,15 @@ print("Loaded plenary\n")
 require("diffview").setup{}
 print("Loaded diffview\n")
 
-require'nvim-treesitter.configs'.setup {
-	ensure_installed = {"c", "lua", "python", "vim", "help" },
-	auto_install = true,
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	}
-}
-print("Loaded nvim-treesitter\n")
+--require'nvim-treesitter.configs'.setup {
+--	ensure_installed = {"c", "lua", "python", "vim", "help" },
+--	auto_install = true,
+--	highlight = {
+--		enable = true,
+--		additional_vim_regex_highlighting = false,
+--	}
+--}
+--print("Loaded nvim-treesitter\n")
 
 -- Use K to show documentation in preview window
 local keyset = vim.keymap.set

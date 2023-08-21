@@ -7,8 +7,8 @@
 -- Unsaved changes indicator
 vim.cmd([[ 
             function! MyTest()
-                if &mod==0
-                    return  nr2char(63218) ..' ' .. nr2char(63218) ..' ' .. nr2char(63218)
+                if &mod==0 
+                    return  nr2char(2062) ..' ' .. nr2char(2062) ..' ' .. nr2char(2062)
                 else
                     return  nr2char(64394) .. ' ' .. nr2char(64394) ..' ' .. nr2char(64394)
             endfunction
