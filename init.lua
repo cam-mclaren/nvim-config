@@ -76,14 +76,14 @@ print("Loaded plenary\n")
 require("diffview").setup{}
 print("Loaded diffview\n")
 
---require'nvim-treesitter.configs'.setup {
---	ensure_installed = {"c", "lua", "python", "vim", "help" },
---	auto_install = true,
---	highlight = {
---		enable = true,
---		additional_vim_regex_highlighting = false,
---	}
---}
+require'nvim-treesitter.configs'.setup {
+	ensure_installed = {"c", "lua", "python", "vim", "help" },
+	auto_install = true,
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	}
+}
 --print("Loaded nvim-treesitter\n")
 
 -- Use K to show documentation in preview window
