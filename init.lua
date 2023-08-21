@@ -2,6 +2,9 @@
 --
 --
 --
+require('plugins')
+print("Loaded plugins\n")
+
 vim.cmd([[set clipboard=unnamedplus]])
 
  -- disable netrw at the very start of your init.lua (strongly advised)
@@ -40,8 +43,6 @@ require("nvim-tree").setup({
 
 
 vim.api.nvim_command("set autoindent expandtab tabstop=4 shiftwidth=4")
-require('plugins')
-print("Loaded plugins\n")
 require('nvim-tree')
 print("Loaded nvim-tree\n")
 require('mytheme')
