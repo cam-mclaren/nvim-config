@@ -1,14 +1,16 @@
 -- Editor Appearance Customisations
 --
---
---
+-- 
+-- We have red skulls for unsaved work
+-- We now have green cool emoticons for saved work
+-- love hearts 63440 - 63444 
 -- Unsaved changes indicator
 vim.cmd([[ 
             function! MyTest()
                 if &mod==0
-                    return  nr2char(63444) ..' ' .. nr2char(63444) ..' ' .. nr2char(63444)
+                    return  nr2char(63218) ..' ' .. nr2char(63218) ..' ' .. nr2char(63218)
                 else
-                    return  nr2char(1481) .. ' ' .. nr2char(1481) ..' ' .. nr2char(1481)
+                    return  nr2char(64394) .. ' ' .. nr2char(64394) ..' ' .. nr2char(64394)
             endfunction
 
             function! MyColGroup()
