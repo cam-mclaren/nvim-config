@@ -1,7 +1,7 @@
 -- Camerons NVIM Clipboard config
 
 os = require('os')
-is_wsl = os.execute("test -e /proc/sys/fs/binfmt_mist/WSLInterop")
+is_wsl = os.execute("test -e /proc/sys/fs/binfmt_misc/WSLInterop")
 if is_wsl == 0 then 
     print("We believe this is WSL.")
     vim.cmd([[
