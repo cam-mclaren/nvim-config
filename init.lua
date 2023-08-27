@@ -1,6 +1,9 @@
 -- Camerons init.lua
 --
 
+-- language highlighting
+require('languages/yaml')
+
 -- Load plugins
 require('plugins')
 print("Loaded plugins\n")
