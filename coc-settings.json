@@ -1,0 +1,10 @@
+{
+    "yaml.schemas" : {
+    "mig_yaml_schema.json": ["/config/*.yaml.j2"] 
+    },
+
+   "diagnostic.checkCurrentLine": true,
+
+
+   "python.autoComplete..extraPaths": ["/home/cam/gpms/gpms_datamigration/framework_glue/"],
+}

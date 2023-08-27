@@ -43,6 +43,7 @@ require("nvim-tree").setup({
                 },
             },
         },
+
     },
     renderer = {
     group_empty = true,
@@ -124,4 +125,6 @@ require('neoscroll').setup({
 })
 print("Loaded neoscroll")
 
+vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
+vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
 
