@@ -23,13 +23,15 @@
 
 	use {"lukas-reineke/indent-blankline.nvim"}
 
-  use { 'karb94/neoscroll.nvim' }
+    use { 'karb94/neoscroll.nvim' }
+   
+    use { 'christoomey/vim-tmux-navigator' }
 
-  use {'tpope/vim-fugitive'}
+    use {'tpope/vim-fugitive'}
 
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
-  use {
+    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         requires = { 
             { 'nvim-lua/plenary.nvim' },
