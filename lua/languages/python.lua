@@ -1,0 +1,5 @@
+vim.cmd([[highlight @variable.python guifg='#FF3300']])
+vim.cmd([[highlight @parameter.python guifg='#61f26e' gui=underline]])
+vim.cmd([[highlight @string.python guifg='#00FF00']])
+vim.cmd([[highlight @comment.python guifg='#7a9eb2' gui=italic]])
+vim.cmd([[highlight @operator.python guifg=white]])

@@ -3,6 +3,8 @@
 
 -- language highlighting
 require('languages/yaml')
+require('languages/python')
+
 
 -- Load plugins
 require('plugins')
@@ -128,3 +130,7 @@ print("Loaded neoscroll")
 vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
 vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
 
+
+-- Functions
+print('Loading custom editor functions')
+require('functions/GetFN')
