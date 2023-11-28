@@ -8,9 +8,10 @@
 vim.cmd([[ 
             function! MyTest()
                 if &mod==0 
-                    return  nr2char(2062) ..' ' .. nr2char(2062) ..' ' .. nr2char(2062)
+                    return  nr2char(61904) ..'  ' .. nr2char(61904) ..'  ' .. nr2char(61904) .. ' '
                 else
-                    return  nr2char(64394) .. ' ' .. nr2char(64394) ..' ' .. nr2char(64394)
+                    return  nr2char(61905) .. '  ' .. nr2char(61905) ..'  ' .. nr2char(61905) .. ' '
+
             endfunction
 
             function! MyColGroup()
