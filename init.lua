@@ -15,7 +15,8 @@ print("Loaded plugins\n")
  vim.g.loaded_netrwPlugin = 1
 
 -- set termguicolors to enable highlight groups
- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
+vim.cmd([[highlight Normal guibg=0x475258 guifg=0xd3c6aa]])
 
 -- set devicons config
 require('nvim-web-devicons').setup({

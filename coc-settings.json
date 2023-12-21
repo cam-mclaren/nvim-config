@@ -6,5 +6,21 @@
    "diagnostic.checkCurrentLine": true,
 
 
-   "python.autoComplete..extraPaths": ["/home/cam/gpms/gpms_datamigration/framework_glue/"],
+   "python.autoComplete..extraPaths": [],
+
+  "languageserver": {
+    "go": {
+      "command": "~/go/bin/gopls",
+      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    }
+  }
+
+
+
 }
+
+
