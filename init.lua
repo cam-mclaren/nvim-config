@@ -148,8 +148,14 @@ require("neoscroll").setup({
 })
 print("Loaded neoscroll")
 
-vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
-vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
+-- Old project config
+--vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
+--vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
+
+-- telescope mappings
+vim.api.nvim_set_keymap("n", "<space>sf", ":Telescope find_files<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<space>sw", ":Telescope live_grep<CR>", { noremap = true, silent = true })
+print("Loaded Telescope Mappings")
 
 -- Functions
 require("functions/GetFN")
