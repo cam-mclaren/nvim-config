@@ -38,7 +38,10 @@ require("nvim-tree").setup({
 	sort_by = "case_sensitive",
 	actions = { open_file = { resize_window = true } },
 	view = {
-		width = 30,
+		width = {
+			min = 30,
+			max = 80,
+		},
 		mappings = {
 			list = {
 				{
@@ -55,8 +58,9 @@ require("nvim-tree").setup({
 		dotfiles = true,
 	},
 })
+
 vim.api.nvim_set_keymap("n", "<space>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<space>f", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<space>f", ":NvimTreeFocus <CR>", { noremap = true, silent = true })
 print("Loaded nvim-tree\n")
 
 vim.api.nvim_command("set autoindent expandtab tabstop=4 shiftwidth=4")
