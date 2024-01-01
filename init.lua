@@ -102,11 +102,6 @@ require("ibl").setup({
 		priority = 500,
 	},
 })
---{
---    -- for example, context is off by default, use this to turn it on
---    show_current_context = true,
---    show_current_context_start = true
---}
 print("Loaded indent_blankline\n")
 
 -- Use K to show documentation in preview window
