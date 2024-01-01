@@ -36,7 +36,7 @@ print("Loaded clipboard.lua")
 -- Load nvim-tree plugin
 require("nvim-tree").setup({
 	sort_by = "case_sensitive",
-	actions = { open_file = { resize_window = false } },
+	actions = { open_file = { resize_window = true } },
 	view = {
 		width = 30,
 		mappings = {
