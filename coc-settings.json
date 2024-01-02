@@ -16,11 +16,20 @@
       "initializationOptions": {
         "usePlaceholders": true
       }
+    },
+    "html" : {
+        "command": "html-languageserver",
+        "filetypes": ["html"],
+        "initializationOptions": {
+            "embeddedLanguages" : {
+                "css": true,
+                "javascript": true
+            }
+        }
     }
+
   }
 
 
 
 }
-
-

@@ -86,7 +86,7 @@ print("Loaded diffview\n")
 
 -- Treesitter
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "c", "lua", "python", "vim" },
+	ensure_installed = {"html", "css", "javascript","go", "c", "lua", "python", "vim" },
 	auto_install = true,
 	highlight = {
 		enable = true,
