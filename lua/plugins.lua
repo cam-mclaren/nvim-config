@@ -1,9 +1,9 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim --
 -- Only required if you have packer configured as `opt`
 --return require("packer").startup(function(use)
-	-- Packer can manage itself
-	--use("wbthomason/packer.nvim")
-	--     use 'rstacruz/vim-closer'
+-- Packer can manage itself
+--use("wbthomason/packer.nvim")
+--     use 'rstacruz/vim-closer'
 --	use({
 --		"nvim-tree/nvim-tree.lua",
 --		requires = {
@@ -13,9 +13,9 @@
 --		tag = "nightly", -- optional, updated every week. (see issue #1193)
 --	})
 
-	--use({ "nvim-tree/nvim-web-devicons" })
+--use({ "nvim-tree/nvim-web-devicons" })
 
-	--use({ "neoclide/coc.nvim", branch = "release" })
+--use({ "neoclide/coc.nvim", branch = "release" })
 
 --	use({
 --		"benmills/vimux",
@@ -24,11 +24,11 @@
 --		end,
 --	})
 
-	--use({ "nvim-treesitter/nvim-treesitter" })
+--use({ "nvim-treesitter/nvim-treesitter" })
 
 --	use({ "lukas-reineke/indent-blankline.nvim" })
 
-	--use({ "karb94/neoscroll.nvim" })
+--use({ "karb94/neoscroll.nvim" })
 
 --	use({ "christoomey/vim-tmux-navigator" })
 

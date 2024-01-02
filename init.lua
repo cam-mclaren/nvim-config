@@ -27,12 +27,12 @@ vim.cmd([[highlight Normal guibg=0x475258 guifg=0xd3c6aa]])
 -- set devicons config
 require("nvim-web-devicons").setup({
 	override_by_extension = {
---		["txt"] = {
---			icon = "",
---			color = "#428850",
---			cterm_color = "65",
---			name = "text",
---		},
+		--		["txt"] = {
+		--			icon = "",
+		--			color = "#428850",
+		--			cterm_color = "65",
+		--			name = "text",
+		--		},
 	},
 })
 
@@ -83,14 +83,13 @@ print("Custom vimux editor commands added")
 
 --vim.api.nvim_set_keymap('n', '<space>o', 'o<esc>', {noremap = true, silent = true})
 
-
 -- Load diffview for git comparisons
 require("diffview").setup({})
 print("Loaded diffview\n")
 
 -- Treesitter
 require("nvim-treesitter.configs").setup({
-	ensure_installed = {"html", "css", "javascript","go", "c", "lua", "python", "vim" },
+	ensure_installed = { "html", "css", "javascript", "go", "c", "lua", "python", "vim" },
 	auto_install = true,
 	highlight = {
 		enable = true,
