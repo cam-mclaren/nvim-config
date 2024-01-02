@@ -20,12 +20,12 @@ vim.cmd([[highlight Normal guibg=0x475258 guifg=0xd3c6aa]])
 -- set devicons config
 require("nvim-web-devicons").setup({
 	override_by_extension = {
-		["txt"] = {
-			icon = "",
-			color = "#428850",
-			cterm_color = "65",
-			name = "text",
-		},
+--		["txt"] = {
+--			icon = "",
+--			color = "#428850",
+--			cterm_color = "65",
+--			name = "text",
+--		},
 	},
 })
 
