@@ -3,8 +3,10 @@
     "mig_yaml_schema.json": ["/config/*.yaml.j2"] 
     },
 
-   "diagnostic.checkCurrentLine": true,
+   "semanticTockens.enable": true,
+   "semanticTockens.filetypes": ["c"],
 
+   "diagnostic.checkCurrentLine": true,
 
    "python.autoComplete..extraPaths": [],
 
@@ -29,7 +31,4 @@
     }
 
   }
-
-
-
 }
