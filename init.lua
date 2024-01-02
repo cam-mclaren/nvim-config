@@ -5,9 +5,16 @@
 require("languages/yaml")
 require("languages/python")
 
--- Load plugins
-require("plugins")
-print("Loaded plugins\n")
+-- Old packer stuff -- Load plugins
+--require("plugins")
+--print("Loaded plugins\n")
+
+require("lazy_nvim")
+print("Loaded lazy\n")
+
+-- Plenary is used by Treesitter
+require("plenary")
+print("Loaded plenary\n")
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -76,9 +83,6 @@ print("Custom vimux editor commands added")
 
 --vim.api.nvim_set_keymap('n', '<space>o', 'o<esc>', {noremap = true, silent = true})
 
--- Plenary is used by Treesitter
-require("plenary")
-print("Loaded plenary\n")
 
 -- Load diffview for git comparisons
 require("diffview").setup({})
