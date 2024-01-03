@@ -72,6 +72,9 @@ print("Loaded nvim-tree\n")
 
 vim.api.nvim_command("set autoindent expandtab tabstop=4 shiftwidth=4")
 
+-- Set colorscheme to elflord
+vim.cmd([[colorscheme elflord]])
+
 -- Load my theme (Mostly status bar config)
 require("mytheme")
 print("Loaded mytheme.lua\n")
