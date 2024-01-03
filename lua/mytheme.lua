@@ -29,7 +29,7 @@ vim.api.nvim_command('set statusline=%#CamsStatusLine#\\|%f\\ \\|\\ %{%MyColGrou
 vim.api.nvim_command('set number')
     --if os.getenv('TERM')=='screen' then
 vim.api.nvim_command("hi LineNr guibg=#00005f")
-vim.api.nvim_command('hi LineNr guifg=grey')
+--vim.api.nvim_command('hi LineNr guifg=grey')
     --vim.api.nvim_command('hi StatusLine guifg=#00005f')
     --vim.api.nvim_command('hi StatusLine guibg=white')
 

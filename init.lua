@@ -1,7 +1,7 @@
 -- Camerons init.lua
 --
--- TODO there is a large dog
 -- language highlighting
+--
 require("languages/yaml")
 require("languages/python")
 
@@ -96,7 +96,7 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true,
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = false,
+		additional_vim_regex_highlighting = true,
 	},
 })
 print("Loaded nvim-treesitter\n")
