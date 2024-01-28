@@ -1,55 +1,63 @@
 {
-    "yaml.schemas" : {
-    "mig_yaml_schema.json": ["/config/*.yaml.j2"] 
+    "yaml.schemas": {
+        "mig_yaml_schema.json": [
+            "/config/*.yaml.j2"
+        ]
     },
-
-   "semanticTokens.enable": true,
-
-   "[c]": {
-       "semanticTokens.enable": true
-   },
-
-   "coc.preferences.jumpCommand": "drop",   
-
-   "diagnostic.checkCurrentLine": true,
-   "diagnostic.virtualTextCurrentLineOnly": false,
-   "diagnostic.virtualText": true, 
-   "codeLens.enable": true,
-
-   "go.goplsOptions": {
-       "linksInHover": true 
-   },
-
-   "python.autoComplete.extraPaths": [],
-
-  "languageserver": {
-    "go": {
-      "command": "~/go/bin/gopls",
-      "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
+    "semanticTokens.enable": true,
+    "[c]": {
+        "semanticTokens.enable": true
     },
-    "html" : {
-        "command": "html-languageserver",
-        "filetypes": ["html"],
-        "initializationOptions": {
-            "embeddedLanguages" : {
-                "css": true,
-                "javascript": true
+    "coc.preferences.formatOnSave": true
+    "coc.preferences.jumpCommand": "drop",
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.virtualText": true,
+    "codeLens.enable": true,
+    "go.goplsOptions": {
+        "linksInHover": true
+    },
+    "python.autoComplete.extraPaths": [],
+    "languageserver": {
+        "go": {
+            "command": "~/go/bin/gopls",
+            "rootPatterns": [
+                "go.work",
+                "go.mod",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "filetypes": [
+                "go"
+            ],
+            "initializationOptions": {
+                "usePlaceholders": true
             }
+        },
+        "html": {
+            "command": "html-languageserver",
+            "filetypes": [
+                "html"
+            ],
+            "initializationOptions": {
+                "embeddedLanguages": {
+                    "css": true,
+                    "javascript": true
+                }
+            }
+        },
+        "terraform": {
+            "command": "terraform-ls",
+            "args": [
+                "serve"
+            ],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {}
         }
-    },
-   "terraform": {
-           "command": "terraform-ls",
-           "args": ["serve"],
-           "filetypes": [
-                   "terraform",
-                   "tf"
-           ],
-           "initializationOptions": {},
-           "settings": {}
-   }
-  }
+    }
 }
