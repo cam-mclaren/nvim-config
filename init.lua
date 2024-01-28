@@ -129,6 +129,23 @@ function _G.show_docs()
 end
 keyset("n", "K", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 
+
+function _G.jump_to_def()
+    local cw = vim.fn.expand("<cword>")
+    if vim.api.nvim_eval("coc#rpc#ready()") then
+        vim.fn.CocActionAsync("jumpDefinition")
+    end
+end
+keyset("n", "<space>g", "<CMD>lua _G.jump_to_def()<CR>", { silent = true })
+
+function _G.jump_to_imp()
+    local cw = vim.fn.expand("<cword>")
+    if vim.api.nvim_eval("coc#rpc#ready()") then
+        vim.fn.CocActionAsync("jumpDeclaration")
+    end
+end
+keyset("n", "<space>G", "<CMD>lua _G.jump_to_imp()<CR>", { silent = true })
+
 require("neoscroll").setup({
 	-- All these keys will be mapped to their corresponding default scrolling animation
 	mappings = {

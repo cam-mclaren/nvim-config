@@ -3,12 +3,24 @@
     "mig_yaml_schema.json": ["/config/*.yaml.j2"] 
     },
 
-   "semanticTockens.enable": true,
-   "semanticTockens.filetypes": ["c"],
+   "semanticTokens.enable": true,
+
+   "[c]": {
+       "semanticTokens.enable": true
+   },
+
+   "coc.preferences.jumpCommand": "drop",   
 
    "diagnostic.checkCurrentLine": true,
+   "diagnostic.virtualTextCurrentLineOnly": false,
+   "diagnostic.virtualText": true, 
+   "codeLens.enable": true,
 
-   "python.autoComplete..extraPaths": [],
+   "go.goplsOptions": {
+       "linksInHover": true 
+   },
+
+   "python.autoComplete.extraPaths": [],
 
   "languageserver": {
     "go": {
@@ -39,7 +51,5 @@
            "initializationOptions": {},
            "settings": {}
    }
-
-
   }
 }
