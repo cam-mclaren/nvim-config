@@ -8,7 +8,14 @@
     "[c]": {
         "semanticTokens.enable": true
     },
-    "coc.preferences.formatOnSave": true
+    "coc.preferences.formatOnSave": true,
+    "[python]": {
+        "coc.preferences.formatOnSave": false,
+        "inlayHint.enable": false
+    },
+    "[json]": {
+        "coc.preferences.formatOnSave": false
+    },
     "coc.preferences.jumpCommand": "drop",
     "diagnostic.checkCurrentLine": true,
     "diagnostic.virtualTextCurrentLineOnly": false,
