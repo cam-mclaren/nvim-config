@@ -19,12 +19,12 @@ if is_wsl == 0 then
         \}
     ]])
     print("Setting clipboard to use win32yank")
-elseif os.getenv("DISPLAY") == ':0' then
-    print("We believe this is X11")
+elseif os.getenv("WAYLAND_DISPLAY") =='wayland-0' then
+    print("We believe this is Wayland")
     vim.cmd([[set clipboard+=unnamedplus]])
     print("Setting clipboard to use unnamedplus")
-elseif os.getenv("WAYLAND_DISPLAY") ==':0' then
-    print("We believe this is Wayland")
+elseif os.getenv("DISPLAY") == ':0' then
+    print("We believe this is X11")
     vim.cmd([[set clipboard+=unnamedplus]])
     print("Setting clipboard to use unnamedplus")
 else
