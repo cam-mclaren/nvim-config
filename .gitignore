@@ -1,3 +1,4 @@
 plugin/*
 luarocks*
 tmux-client*
+lazy-lock.json
