@@ -23,6 +23,8 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 vim.cmd([[highlight Normal guibg=0x475258 guifg=0xd3c6aa]])
+-- Tmux filetype
+vim.cmd([[au BufRead,BufNewFile *.tmux setf tmux]])
 
 -- set devicons config
 require("nvim-web-devicons").setup({
@@ -182,3 +184,4 @@ print("Loaded Telescope Mappings")
 -- Functions
 require("functions/GetFN")
 print("Loaded custom GetFN function")
+
