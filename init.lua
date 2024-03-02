@@ -51,14 +51,6 @@ require("nvim-tree").setup({
 			min = 30,
 			max = 80,
 		},
-		mappings = {
-			list = {
-				{
-					key = "u",
-					action = "dir_up",
-				},
-			},
-		},
 	},
 	renderer = {
 		group_empty = true,
