@@ -74,6 +74,10 @@ vim.cmd([[set foldmethod=syntax]])
 -- Set colorscheme to elflord
 vim.cmd([[colorscheme elflord]])
 
+-- the nvim terminal function over the use of tmux panes.
+vim.cmd([[set noea]])
+vim.cmd([[set splitbelow]])
+
 -- Load my theme (Mostly status bar config)
 require("mytheme")
 print("Loaded mytheme.lua\n")
@@ -178,7 +182,14 @@ vim.api.nvim_set_keymap("n", "<space>sf", ":Telescope find_files<CR>", { noremap
 vim.api.nvim_set_keymap("n", "<space>sw", ":Telescope live_grep<CR>", { noremap = true, silent = true })
 print("Loaded Telescope Mappings")
 
+
+require("nvim_comment").setup()
+print("Loaded nvim_comment")
+
 -- Functions
 require("functions/GetFN")
 print("Loaded custom GetFN function")
+
+
+
 
