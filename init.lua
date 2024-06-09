@@ -51,6 +51,7 @@ require("nvim-tree").setup({
 			min = 30,
 			max = 80,
 		},
+    preserve_window_proportions = true
 	},
 	renderer = {
 		group_empty = true,
@@ -64,7 +65,11 @@ vim.api.nvim_set_keymap("n", "<space>e", ":NvimTreeToggle<CR>", { noremap = true
 vim.api.nvim_set_keymap("n", "<space>f", ":NvimTreeFocus <CR>", { noremap = true, silent = true })
 print("Loaded nvim-tree\n")
 
-vim.api.nvim_command("set autoindent expandtab tabstop=4 shiftwidth=4")
+vim.api.nvim_command("set autoindent expandtab tabstop=2 shiftwidth=2")
+
+
+vim.cmd([[set nowrap]])
+vim.cmd([[set foldmethod=syntax]])
 
 -- Set colorscheme to elflord
 vim.cmd([[colorscheme elflord]])
@@ -74,9 +79,9 @@ require("mytheme")
 print("Loaded mytheme.lua\n")
 
 -- vimux commands
-vim.cmd([[ command! Run VimuxRunCommand("python3 " . bufname("%")) ]]) -- I don't really use these
-vim.cmd([[ command! Myshell !tmux split-window -v -n cams_shell_window ]]) -- But they could be useful one day
-print("Custom vimux editor commands added")
+--vim.cmd([[ command! Run VimuxRunCommand("python3 " . bufname("%")) ]]) -- I don't really use these
+--vim.cmd([[ command! Myshell !tmux split-window -v -n cams_shell_window ]]) -- But they could be useful one day
+--print("Custom vimux editor commands added")
 
 --vim.api.nvim_set_keymap('n', '<space>o', 'o<esc>', {noremap = true, silent = true})
 
