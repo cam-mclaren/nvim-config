@@ -74,7 +74,9 @@ vim.cmd([[set foldmethod=syntax]])
 -- Set colorscheme to elflord
 vim.cmd([[colorscheme elflord]])
 
--- the nvim terminal function over the use of tmux panes.
+-- A few settings to quickly create a terminal window under 
+-- the current buffer within nvim itself. I initially thought
+-- I might replace tmux with this but I think that's unlikely now.
 vim.cmd([[set noea]])
 vim.cmd([[set splitbelow]])
 
