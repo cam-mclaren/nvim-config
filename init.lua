@@ -192,6 +192,3 @@ print("Loaded nvim_comment")
 require("functions/GetFN")
 print("Loaded custom GetFN function")
 
-
-
-
