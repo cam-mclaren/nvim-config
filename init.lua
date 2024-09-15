@@ -66,8 +66,6 @@ vim.api.nvim_set_keymap("n", "<space>f", ":NvimTreeFocus <CR>", { noremap = true
 print("Loaded nvim-tree\n")
 
 vim.api.nvim_command("set autoindent expandtab tabstop=2 shiftwidth=2")
-
-
 vim.cmd([[set nowrap]])
 vim.cmd([[set foldmethod=syntax]])
 vim.opt.foldlevelstart=99
