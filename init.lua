@@ -70,6 +70,7 @@ vim.api.nvim_command("set autoindent expandtab tabstop=2 shiftwidth=2")
 
 vim.cmd([[set nowrap]])
 vim.cmd([[set foldmethod=syntax]])
+vim.opt.foldlevelstart=99
 
 -- Set colorscheme to elflord
 vim.cmd([[colorscheme elflord]])
