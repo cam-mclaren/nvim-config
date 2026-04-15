@@ -3,7 +3,7 @@
 os = require('os')
 is_wsl = os.execute("test -e /proc/sys/fs/binfmt_misc/WSLInterop")
 if is_wsl == 0 then 
-    print("We believe this is WSL.")
+    vim.notify("We believe this is WSL.", vim.log.levels.INFO)
     vim.cmd([[
     let g:clipboard = {
         \ 'name': 'win32yank-wsl',
@@ -18,16 +18,16 @@ if is_wsl == 0 then
         \ 'cache_enabled': 0,
         \}
     ]])
-    print("Setting clipboard to use win32yank")
+    vim.notify("Setting clipboard to use win32yank", vim.log.levels.INFO)
 elseif os.getenv("WAYLAND_DISPLAY") =='wayland-0' then
-    print("We believe this is Wayland")
+    vim.notify("We believe this is Wayland", vim.log.levels.INFO)
     vim.cmd([[set clipboard+=unnamedplus]])
-    print("Setting clipboard to use unnamedplus")
+    vim.notify("Setting clipboard to use unnamedplus", vim.log.levels.INFO)
 elseif os.getenv("DISPLAY") == ':0' then
-    print("We believe this is X11")
+    vim.notify("We believe this is X11", vim.log.levels.INFO)
     vim.cmd([[set clipboard+=unnamedplus]])
-    print("Setting clipboard to use unnamedplus")
+    vim.notify("Setting clipboard to use unnamedplus", vim.log.levels.INFO)
 else
-    print("Uknown display.\nUnable to configure clipboard")
+    vim.notify("Uknown display.\nUnable to configure clipboard", vim.log.levels.INFO)
 end
 

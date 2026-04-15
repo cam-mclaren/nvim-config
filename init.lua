@@ -7,14 +7,24 @@ require("languages/python")
 
 -- Old packer stuff -- Load plugins
 --require("plugins")
---print("Loaded plugins\n")
+---- print("Loaded plugins\n")
+
 
 require("lazy_nvim")
-print("Loaded lazy\n")
+
+require("fidget").setup(
+  {
+    notification = {
+      override_vim_notify = true
+    }
+  }
+)
+vim.notify("Loaded lazy\n", vim.log.levels.INFO)
+vim.notify("Loaded fidget\n", vim.log.levels.INFO)
 
 -- Plenary is used by Treesitter
 require("plenary")
-print("Loaded plenary\n")
+vim.notify("Loaded plenary\n", vim.log.levels.INFO)
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -40,7 +50,7 @@ require("nvim-web-devicons").setup({
 
 -- set nvim keyboard to work with system desktop keyboard.
 require("clipboard")
-print("Loaded clipboard.lua")
+vim.notify("Loaded clipboard.lua", vim.log.levels.INFO)
 
 -- Load nvim-tree plugin
 require("nvim-tree").setup({
@@ -63,15 +73,15 @@ require("nvim-tree").setup({
 
 vim.api.nvim_set_keymap("n", "<space>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<space>f", ":NvimTreeFocus <CR>", { noremap = true, silent = true })
-print("Loaded nvim-tree\n")
+vim.notify("Loaded nvim-tree\n", vim.log.levels.INFO)
 
 vim.api.nvim_command("set autoindent expandtab tabstop=2 shiftwidth=2")
 vim.cmd([[set nowrap]])
 vim.cmd([[set foldmethod=syntax]])
 vim.opt.foldlevelstart=99
 
--- Set colorscheme to elflord
-vim.cmd([[colorscheme elflord]])
+-- Set colorscheme to unokai
+vim.cmd([[colorscheme unokai]])
 
 -- A few settings to quickly create a terminal window under 
 -- the current buffer within nvim itself. I initially thought
@@ -81,7 +91,7 @@ vim.cmd([[set splitbelow]])
 
 -- Load my theme (Mostly status bar config)
 require("mytheme")
-print("Loaded mytheme.lua\n")
+vim.notify("Loaded mytheme.lua\n", vim.log.levels.INFO)
 
 -- vimux commands
 --vim.cmd([[ command! Run VimuxRunCommand("python3 " . bufname("%")) ]]) -- I don't really use these
@@ -92,7 +102,7 @@ print("Loaded mytheme.lua\n")
 
 -- Load diffview for git comparisons
 require("diffview").setup({})
-print("Loaded diffview\n")
+vim.notify("Loaded diffview\n", vim.log.levels.INFO)
 
 -- Treesitter
 require("nvim-treesitter.configs").setup({
@@ -103,7 +113,7 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = true,
 	},
 })
-print("Loaded nvim-treesitter\n")
+vim.notify("Loaded nvim-treesitter\n", vim.log.levels.INFO)
 
 require("ibl").setup({
 	scope = {
@@ -116,11 +126,11 @@ require("ibl").setup({
 		priority = 500,
 	},
 })
-print("Loaded indent_blankline\n")
+vim.notify("Loaded indent_blankline\n", vim.log.levels.INFO)
 
 -- Use K to show documentation in preview window
 local keyset = vim.keymap.set
-print("Setting K to show hover documentation from CoC LSP client")
+-- print("Setting K to show hover documentation from CoC LSP client")
 function _G.show_docs()
 	local cw = vim.fn.expand("<cword>")
 	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
@@ -172,7 +182,7 @@ require("neoscroll").setup({
 	post_hook = nil, -- Function to run after the scrolling animation ends
 	performance_mode = false, -- Disable "Performance Mode" on all buffers.
 })
-print("Loaded neoscroll")
+vim.notify("Loaded neoscroll", vim.log.levels.INFO)
 
 -- Old project config
 --vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
@@ -181,13 +191,13 @@ print("Loaded neoscroll")
 -- telescope mappings
 vim.api.nvim_set_keymap("n", "<space>sf", ":Telescope find_files<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<space>sw", ":Telescope live_grep<CR>", { noremap = true, silent = true })
-print("Loaded Telescope Mappings")
+vim.notify("Loaded Telescope Mappings", vim.log.levels.INFO)
 
 
 require("nvim_comment").setup()
-print("Loaded nvim_comment")
+vim.notify("Loaded nvim_comment", vim.log.levels.INFO)
 
 -- Functions
 require("functions/GetFN")
-print("Loaded custom GetFN function")
+vim.notify("Loaded custom GetFN function", vim.log.levels.INFO)
 

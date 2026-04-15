@@ -139,5 +139,8 @@ require("lazy").setup({
      vim.g.mkdp_filetypes = { "markdown" }
    end,
     ft = { "markdown" },
+  },
+  {
+    "j-hui/fidget.nvim"
   }
 })
