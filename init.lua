@@ -5,11 +5,6 @@
 require("languages/yaml")
 require("languages/python")
 
--- Old packer stuff -- Load plugins
---require("plugins")
----- print("Loaded plugins\n")
-
-
 require("lazy_nvim")
 
 require("fidget").setup(
@@ -183,10 +178,6 @@ require("neoscroll").setup({
 	performance_mode = false, -- Disable "Performance Mode" on all buffers.
 })
 vim.notify("Loaded neoscroll", vim.log.levels.INFO)
-
--- Old project config
---vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
---vim.api.nvim_command("au BufRead,BufNewFile *.yaml.j2 set filetype=yaml")
 
 -- telescope mappings
 vim.api.nvim_set_keymap("n", "<space>sf", ":Telescope find_files<CR>", { noremap = true, silent = true })
