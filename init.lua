@@ -100,14 +100,8 @@ require("diffview").setup({})
 vim.notify("Loaded diffview\n", vim.log.levels.INFO)
 
 -- Treesitter
-require("nvim-treesitter.configs").setup({
-	ensure_installed = { "html", "css", "go", "c", "lua", "python", "vim" },
-	auto_install = true,
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = true,
-	},
-})
+require("nvim-treesitter").setup()
+require("nvim-treesitter").install({ "html", "css", "go", "c", "lua", "python", "vim" })
 vim.notify("Loaded nvim-treesitter\n", vim.log.levels.INFO)
 
 require("ibl").setup({

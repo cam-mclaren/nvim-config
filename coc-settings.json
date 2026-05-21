@@ -22,7 +22,8 @@
     "diagnostic.virtualText": true,
     "codeLens.enable": true,
     "go.goplsOptions": {
-        "linksInHover": true
+        "linksInHover": true,
+        "semanticTokens": true
     },
     "python.autoComplete.extraPaths": [],
     "languageserver": {

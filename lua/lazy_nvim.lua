@@ -103,6 +103,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
