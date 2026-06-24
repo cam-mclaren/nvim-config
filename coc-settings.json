@@ -1,9 +1,4 @@
 {
-    "yaml.schemas": {
-        "mig_yaml_schema.json": [
-            "/config/*.yaml.j2"
-        ]
-    },
     "semanticTokens.enable": true,
     "[c]": {
         "semanticTokens.enable": true
@@ -21,28 +16,8 @@
     "diagnostic.virtualTextCurrentLineOnly": false,
     "diagnostic.virtualText": true,
     "codeLens.enable": true,
-    "go.goplsOptions": {
-        "linksInHover": true,
-        "semanticTokens": true
-    },
     "python.autoComplete.extraPaths": [],
     "languageserver": {
-        "go": {
-            "command": "~/go/bin/gopls",
-            "rootPatterns": [
-                "go.work",
-                "go.mod",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "filetypes": [
-                "go"
-            ],
-            "initializationOptions": {
-                "usePlaceholders": true
-            }
-        },
         "html": {
             "command": "html-languageserver",
             "filetypes": [

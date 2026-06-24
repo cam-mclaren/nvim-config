@@ -101,7 +101,19 @@ vim.notify("Loaded diffview\n", vim.log.levels.INFO)
 
 -- Treesitter
 require("nvim-treesitter").setup()
-require("nvim-treesitter").install({ "html", "css", "go", "c", "lua", "python", "vim" })
+require("nvim-treesitter").install({ "html", "css", "go", "gosum", "gomod", "c", "lua", "python", "vim" })
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { "gosum" },
+  callback = function() vim.treesitter.start() end,
+})
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { "gomod" },
+  callback = function() vim.treesitter.start() end,
+})
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { "go" },
+  callback = function() vim.treesitter.start() end,
+})
 vim.notify("Loaded nvim-treesitter\n", vim.log.levels.INFO)
 
 require("ibl").setup({
@@ -119,20 +131,21 @@ vim.notify("Loaded indent_blankline\n", vim.log.levels.INFO)
 
 -- Use K to show documentation in preview window
 local keyset = vim.keymap.set
--- print("Setting K to show hover documentation from CoC LSP client")
 function _G.show_docs()
-	local cw = vim.fn.expand("<cword>")
-	if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
-		vim.api.nvim_command("h " .. cw)
-	elseif vim.api.nvim_eval("coc#rpc#ready()") then
-		vim.fn.CocActionAsync("doHover")
-	else
-		vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
-	end
+  local cw = vim.fn.expand("<cword>")
+  if vim.fn.index({ "vim", "help" }, vim.bo.filetype) >= 0 then
+    vim.api.nvim_command("h " .. cw)
+  elseif vim.bo.filetype == "go" or vim.bo.filetype == "gosum" or vim.bo.filetype == "gomod" then -- Use go.nvim instead of coc
+    vim.lsp.buf.hover()
+  elseif vim.api.nvim_eval("coc#rpc#ready()") then
+    vim.fn.CocActionAsync("doHover")
+  else
+    vim.api.nvim_command("!" .. vim.o.keywordprg .. " " .. cw)
+  end
 end
 keyset("n", "K", "<CMD>lua _G.show_docs()<CR>", { silent = true })
 
-
+-- TODO: Maybe modify this so it doesn't clash with nvim go
 function _G.jump_to_def()
     local cw = vim.fn.expand("<cword>")
     if vim.api.nvim_eval("coc#rpc#ready()") then
@@ -141,6 +154,7 @@ function _G.jump_to_def()
 end
 keyset("n", "<space>g", "<CMD>lua _G.jump_to_def()<CR>", { silent = true })
 
+-- TODO: Maybe modify this so it doesn't clash with nvim go
 function _G.jump_to_imp()
     local cw = vim.fn.expand("<cword>")
     if vim.api.nvim_eval("coc#rpc#ready()") then
@@ -186,3 +200,17 @@ vim.notify("Loaded nvim_comment", vim.log.levels.INFO)
 require("functions/GetFN")
 vim.notify("Loaded custom GetFN function", vim.log.levels.INFO)
 
+require('go').setup({
+  goimports = 'gopls',
+  lsp_document_formatting = true,
+  lsp_inlay_hints = { enable = true,},
+  lsp_cfg = true,
+  floaterm = {   -- position
+    posititon = 'auto', -- one of {`top`, `bottom`, `left`, `right`, `center`, `auto`}
+    width = 0.45, -- width of float window if not auto
+    height = 0.98, -- height of float window if not auto
+    title_colors = 'nord', -- default to nord, one of {'nord', 'tokyo', 'dracula', 'rainbow', 'solarized ', 'monokai'}
+                              -- can also set to a list of colors to define colors to choose from
+                              -- e.g {'#D8DEE9', '#5E81AC', '#88C0D0', '#EBCB8B', '#A3BE8C', '#B48EAD'}
+  },
+})
